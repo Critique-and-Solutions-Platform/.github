@@ -1,29 +1,60 @@
-document.getElementById('critiqueForm').addEventListener('submit', function(event) {
+// Get the form and thread list elements
+const threadForm = document.getElementById('threadForm');
+const threadList = document.getElementById('threadList');
+
+// Function to create a new thread
+threadForm.addEventListener('submit', function(event) {
     event.preventDefault();
-    const critique = document.getElementById('critiquePost').value;
 
-    // Create new list item for the critique section
-    const newCritiqueItem = document.createElement('li');
-    newCritiqueItem.textContent = critique;
+    const title = document.getElementById('threadTitle').value;
+    const content = document.getElementById('threadContent').value;
 
-    // Append new critique to the list
-    document.getElementById('critiqueItems').appendChild(newCritiqueItem);
+    // Create the thread element
+    const newThread = document.createElement('li');
+    newThread.classList.add('thread');
 
-    // Reset the form
-    document.getElementById('critiqueForm').reset();
-});
+    const threadTitle = document.createElement('h3');
+    threadTitle.classList.add('thread-title');
+    threadTitle.textContent = title;
 
-document.getElementById('solutionForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const solution = document.getElementById('solutionPost').value;
+    const threadContent = document.createElement('p');
+    threadContent.classList.add('thread-content');
+    threadContent.textContent = content;
 
-    // Create new list item for the solutions section
-    const newSolutionItem = document.createElement('li');
-    newSolutionItem.textContent = solution;
+    // Add a reply form to each thread
+    const replyForm = document.createElement('form');
+    replyForm.classList.add('reply-form');
+    const replyTextarea = document.createElement('textarea');
+    replyTextarea.setAttribute('placeholder', 'Write a reply...');
+    replyForm.appendChild(replyTextarea);
+    const replyButton = document.createElement('button');
+    replyButton.classList.add('reply-button');
+    replyButton.textContent = 'Post Reply';
+    replyForm.appendChild(replyButton);
 
-    // Append new solution to the list
-    document.getElementById('solutionItems').appendChild(newSolutionItem);
+    const replyList = document.createElement('ul');
+    replyList.classList.add('reply-list');
 
-    // Reset the form
-    document.getElementById('solutionForm').reset();
+    // Event listener to add replies to the thread
+    replyForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const replyText = replyTextarea.value;
+        const replyItem = document.createElement('li');
+        replyItem.classList.add('reply-item');
+        replyItem.textContent = replyText;
+        replyList.appendChild(replyItem);
+        replyTextarea.value = ''; // Reset the textarea after reply
+    });
+
+    // Append title, content, reply form, and reply list to the thread
+    newThread.appendChild(threadTitle);
+    newThread.appendChild(threadContent);
+    newThread.appendChild(replyForm);
+    newThread.appendChild(replyList);
+
+    // Add the thread to the list
+    threadList.appendChild(newThread);
+
+    // Reset the thread form
+    threadForm.reset();
 });
