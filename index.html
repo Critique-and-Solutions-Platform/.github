@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Critique and Solutions Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Critique & Solutions</h1>
+            <nav>
+                <ul>
+                    <li><a href="#critique">Criticize</a></li>
+                    <li><a href="#solution">Solutions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="critique">
+        <div class="container">
+            <h2>Critique Section</h2>
+            <form id="critiqueForm">
+                <label for="critiquePost">What's bothering you?</label>
+                <textarea id="critiquePost" name="critiquePost" required></textarea>
+                <button type="submit">Submit Critique</button>
+            </form>
+            <div id="critiqueList">
+                <h3>Recent Critiques:</h3>
+                <ul id="critiqueItems">
+                    <!-- Dynamic Critique Items will be inserted here -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="solution">
+        <div class="container">
+            <h2>Solutions Section</h2>
+            <form id="solutionForm">
+                <label for="solutionPost">Have a solution?</label>
+                <textarea id="solutionPost" name="solutionPost" required></textarea>
+                <button type="submit">Submit Solution</button>
+            </form>
+            <div id="solutionList">
+                <h3>Recent Solutions:</h3>
+                <ul id="solutionItems">
+                    <!-- Dynamic Solution Items will be inserted here -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Critique & Solutions. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
