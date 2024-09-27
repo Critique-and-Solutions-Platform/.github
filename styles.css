@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #444;
+    color: white;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    width: 80%;
+    margin: 2rem auto;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+form textarea {
+    width: 100%;
+    height: 100px;
+    padding: 1rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+form button {
+    padding: 0.7rem 1rem;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #666;
+}
+
+#critiqueList ul, #solutionList ul {
+    list-style: none;
+    padding: 0;
+}
+
+#critiqueList ul li, #solutionList ul li {
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
